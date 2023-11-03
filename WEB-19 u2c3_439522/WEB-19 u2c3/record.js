@@ -40,6 +40,7 @@ myForm.addEventListener("submit",function(e)
         let td6 = document.createElement("td");
         let td7 = document.createElement("td");
         let td8 = document.createElement("td");
+        let deleteBtn = document.createElement("button");
         
         td1.innerText = element.input1;
         td2.innerText = element.input2;
@@ -49,7 +50,15 @@ myForm.addEventListener("submit",function(e)
         td6.innerText = element.input6;
         td7.innerText = element.input7;
         td8.innerText = element.input8;
-        row.append(td1,td2,td3,td4,td5,td6,td7,td8);
+
+        
+        deleteBtn.innerText = "Delete";
+        deleteBtn.addEventListener("click", () => {
+          AllData.innerText= "Delete";
+          tbody.removeChild(row);
+        });
+
+        row.append(td1,td2,td3,td4,td5,td6,td7,td8,deleteBtn);
         tbody.append(row);
     })
 })
